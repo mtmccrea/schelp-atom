@@ -315,21 +315,50 @@
     'patterns': [
     # MODAL TAGS
       {
+        # 'begin': '\\b(?i:LINK)::'
+        # 'end': '::'
+        # 'name': 'markup.underline.link.schelp'
         'begin': '\\b(?i:LINK)::'
-        'end': '::'
-        'name': 'markup.underline.link.schelp'
+        'beginCaptures':
+            '0':
+              'name': 'punctuation.definition.comment.schelp'
+        'end': '\\s*.*?(::)\\s*'
+        'endCaptures':
+            '0':
+                'name': 'markup.underline.link.schelp'
+            '1':
+                'name': 'punctuation.definition.comment.schelp'
       }
       {
-        'begin': '\\b(?i:STRONG)::'
-        'end': '::'
-        'name': 'tryme.schelp'
+        # 'begin': '\\b(?i:STRONG)::'
+        # 'end': '::'
+        # 'name': 'tryme.schelp'
         # 'name': 'punctuation.definition.heading.schelp'
-        # 'name': 'operator.schelp'
+        'begin': '\\b(?i:STRONG)::'
+        'beginCaptures':
+            '0':
+              'name': 'punctuation.definition.comment.schelp'
+        'end': '\\s*.*?(::)\\s*'
+        'endCaptures':
+            '0':
+                'name': 'markup.bold.schelp'
+            '1':
+                'name': 'punctuation.definition.comment.schelp'
       }
       {
+        # 'begin': '\\b(?i:EMPHASIS)::'
+        # 'end': '::'
+        # 'name': 'markup.italic.schelp'
         'begin': '\\b(?i:EMPHASIS)::'
-        'end': '::'
-        'name': 'markup.italic.schelp'
+        'beginCaptures':
+            '0':
+              'name': 'punctuation.definition.comment.schelp'
+        'end': '\\s*.*?(::)\\s*'
+        'endCaptures':
+            '0':
+                'name': 'markup.italic.schelp'
+            '1':
+                'name': 'punctuation.definition.comment.schelp'
       }
       {
         'begin': '\\b(?i:SOFT)::'
