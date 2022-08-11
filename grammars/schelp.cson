@@ -124,7 +124,9 @@
     'begin': '\\b((?i:METHOD::))(.*)$'
     'beginCaptures':
         '1':
-            'name': 'storage.type.function.schelp'
+            # 'name': 'storage.type.function.schelp'
+            # 'name': 'variable.parameter.schelp'
+            'name': 'meta.class.schelp'
         '2':
             'name': 'entity.name.function.schelp'
     'end': '((?i:(\\bSECTION|\\bDESCRIPTION|\\bINSTANCEMETHODS|\\bCLASSMETHODS|\\bEXAMPLES|\\bSUBSECTION)::(.*)))'
@@ -136,7 +138,9 @@
             'match': '\\b((?i:METHOD::))(.*)$'
             'captures':
                 '1':
-                    'name': 'storage.type.function.schelp'
+                    # 'name': 'storage.type.function.schelp'
+                    # 'name': 'variable.parameter.schelp'
+                    'name': 'meta.class.schelp'
                 '2':
                     'name': 'entity.name.function.schelp'
 
@@ -145,11 +149,12 @@
             'match': '\\b((?i:ARGUMENT)::)(.*)$'
             'captures':
                 '1':
-                    'name': 'storage.type.var.schelp'
-                '2':
+                    # 'name': 'storage.type.var.schelp'
                     # 'name': 'variable.parameter.schelp'
-                    # 'name': 'entity.name.function.schelp' # mtm
-                    'name': 'markup.link.schelp' # mtm
+                    # 'name': 'punctuation.definition.comment.schelp'
+                    'name': 'meta.link.schelp'
+                '2':
+                    'name': 'markup.link.schelp'
         }
         {
             'match': '\\b(?i:RETURNS)::'
@@ -305,7 +310,9 @@
       {
         'begin': '\\b(?i:STRONG)::'
         'end': '::'
-        'name': 'markup.bold.schelp'
+        'name': 'tryme.schelp'
+        # 'name': 'punctuation.definition.heading.schelp'
+        # 'name': 'operator.schelp'
       }
       {
         'begin': '\\b(?i:EMPHASIS)::'
@@ -328,8 +335,21 @@
         'name': 'markup.other.image.schelp'
       }
       {
-          'match' : '\\b(?i:CODE)::.*?::'
-          'name': 'markup.raw.schelp'
+        # 'match' : '\\b(?i:CODE)::.*?::'
+        # 'name': 'markup.raw.schelp'
+          'begin': '\\b(?i:CODE)::'
+          'beginCaptures':
+              '0':
+                'name': 'punctuation.definition.comment.schelp'
+              '1':
+                  'name': 'markup.bold.schelp'
+                  # 'name': 'markup.raw.schelp'
+          'end': '\\s*.*?(::)\\s*'
+          'endCaptures':
+              '0':
+                  'name': 'markup.raw.schelp'
+              '1':
+                  'name': 'punctuation.definition.comment.schelp'
           # mtm TODO: https://flight-manual.atom.io/hacking-atom/sections/creating-a-grammar/#language-injection
       }
       {
@@ -356,7 +376,8 @@
           'begin': '\\b((?i:NOTE)::)'
           'beginCaptures':
               '1':
-                  'name': 'keyword.other.schelp'
+                  # 'name': 'keyword.other.schelp'
+                  'name': 'markup.bold.schelp'
           'end': '\\s*(::)\\s*'
           'endCaptures':
               '1':
@@ -376,8 +397,7 @@
           'begin': '\\b((?i:WARNING)::)'
           'beginCaptures':
               '1':
-                  # 'name': 'keyword.other.schelp'
-                  'name': 'variable.other.schelp' # mtm
+                  'name': 'variable.other.schelp'
           'end': '\\s*(::)\\s*'
           'endCaptures':
               '1':

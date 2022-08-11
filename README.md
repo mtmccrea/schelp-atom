@@ -14,6 +14,7 @@ Style definitions for syntax highlighting can be found in:
 
 - [Guide](https://gist.github.com/Aerijo/b8c82d647db783187804e86fa0a604a1)
 - [Creating a Theme](https://flight-manual.atom.io/hacking-atom/sections/creating-a-theme/#creating-a-theme)
+- [Available UI variables](https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less)
 
 This is an Atom Syntax Highlighter for Supercollider Help files.
 
