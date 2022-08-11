@@ -113,12 +113,24 @@
 #METHOD TAGS
 # inside the method definition, we can recognize other tags: argument, returns, discussion,
   {
-      'match': '\\b(?i:PRIVATE)::\\s*(\\w+,\\s*)*\\s*\\w+$'
-      'name': 'storage.type.private.schelp'
+      # 'match': '\\b(?i:PRIVATE)::\\s*(\\w+,\\s*)*\\s*\\w+$'
+      # 'name': 'storage.type.private.schelp'
+      'match': '\\b((?i:PRIVATE::))(.*)$'
+      'captures':
+          '1':
+              'name': 'meta.class.schelp'
+          '2':
+              'name': 'entity.name.function.schelp'
   }
   {
-      'match': '\\b(?i:COPYMETHOD)::.*$'
-      'name': 'storage.type.function.schelp'
+      # 'match': '\\b(?i:COPYMETHOD)::.*$'
+      # 'name': 'storage.type.function.schelp'
+      'match': '\\b((?i:COPYMETHOD::))(.*)$'
+      'captures':
+          '1':
+              'name': 'meta.class.schelp'
+          '2':
+              'name': 'entity.name.function.schelp'
   }
   {
     'begin': '\\b((?i:METHOD::))(.*)$'
