@@ -147,7 +147,9 @@
                 '1':
                     'name': 'storage.type.var.schelp'
                 '2':
-                    'name': 'variable.parameter.schelp'
+                    # 'name': 'variable.parameter.schelp'
+                    # 'name': 'entity.name.function.schelp' # mtm
+                    'name': 'markup.link.schelp' # mtm
         }
         {
             'match': '\\b(?i:RETURNS)::'
@@ -328,6 +330,7 @@
       {
           'match' : '\\b(?i:CODE)::.*?::'
           'name': 'markup.raw.schelp'
+          # mtm TODO: https://flight-manual.atom.io/hacking-atom/sections/creating-a-grammar/#language-injection
       }
       {
         'begin': '^\\s*(?i:CODE)::'
@@ -373,7 +376,8 @@
           'begin': '\\b((?i:WARNING)::)'
           'beginCaptures':
               '1':
-                  'name': 'keyword.other.schelp'
+                  # 'name': 'keyword.other.schelp'
+                  'name': 'variable.other.schelp' # mtm
           'end': '\\s*(::)\\s*'
           'endCaptures':
               '1':
